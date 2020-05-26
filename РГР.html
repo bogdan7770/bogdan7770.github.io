@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>РГР</title>
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>  
+<script type="text/javascript"> 
+ google.load("visualization", "1.1", {packages:["wordtree"]});
+ google.setOnLoadCallback(drawChart);
+ function drawChart() {
+ var data = google.visualization.arrayToDataTable(
+ [  ['Фразы'],
+ ['транспорт має номер'], ['транспорт має маршрут'], ['транспорт має графік'],
+ ['транспорт тип маршрутка ціна'], ['транспорт тип маршрутка кількість_місць'],
+ ['транспорт тип автобус ціна'], ['транспорт тип автобус кількість_місць'], 
+ ['транспорт тип тролейбус ціна'], ['транспорт тип тролейбус кількість_місць'],
+ ['транспорт співробітники водії'], ['транспорт співробітники кондуктори'], ['транспорт співробітники прибиральники'], ['транспорт співробітники керівництво'],]
+ );
+
+ var options = {		
+  wordtree: {
+    format: 'implicit',
+    word: 'транспорт', 
+   }
+ };
+ var chart = new google.visualization.WordTree(document.getElementById('wordtree_basic'));
+ chart.draw(data, options);
+ }
+ </script> 
+
+</head>
+<body>
+	<div id="wordtree_basic"></div> 
+</body>
+</html>
